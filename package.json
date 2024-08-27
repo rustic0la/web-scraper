@@ -4,19 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node build/index.js",
-    "compile": "tsc -p ."
+    "start": "yarn compile; node build/src/index.js",
+    "compile": "tsc -p .",
+    "optimize-svgs": "svgo -f build/src/downloads/**/**/* -o ./svgs/optimized"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jsdom": "^21.1.6",
     "@types/node": "^16.9.1",
     "@types/puppeteer": "^5.4.4",
     "@types/request": "^2.48.7",
     "@types/turndown": "^5.0.1",
-    "clipboardy": "^2.3.0",
-    "puppeteer": "^10.2.0",
-    "turndown": "^7.1.1"
+    "clipboardy": "^2.3.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.17.0",
+    "@mistralai/mistralai": "^1.0.3",
+    "axios": "^1.7.2",
+    "deepl-node": "^1.13.1",
+    "htmlparser2": "^9.1.0",
+    "jsdom": "^24.1.1",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^22.11.0",
+    "svgo": "^3.3.2",
+    "turndown": "^7.1.3"
   }
 }
